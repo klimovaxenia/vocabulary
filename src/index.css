@@ -1,13 +1,164 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+}
+.main-div {
+    margin: auto;
+}
+.start-is {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  
+    margin-top: 20%;
+}
+.start-but {
+    margin: auto;
+    width: 400px;
+    height: 60px;
+    background-color: lightgreen;
+    border: 3px solid green;
+    font-size: 30px;
+}
+.start-but:hover {
+    cursor: pointer;
+    background-color: green;
+}
+.test-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  
+}
+.banner-vr {
+    margin-bottom: 30px;
+}
+.banner-wrong {
+    width: 600px;
+    height: 50px;
+    margin: auto;
+    line-height: 50px;
+    text-align: center;
+    background-color: lightcoral;
+}
+.banner-right {
+    width: 600px;
+    height: 50px;
+    margin: auto;
+    line-height: 50px;
+    text-align: center;
+    background-color: lightgreen;
+}
+.banner-empty {
+    width: 600px;
+    height: 50px;
+    margin: auto;
+    line-height: 50px;
+    text-align: center;
+    background-color: none;
+}
+.test-is {
+    margin: auto;
+    text-align: center;
+}
+.mylabel {
+    font-size: 40px;
+}
+input {
+    display: block;
+    width: 300px;
+    margin-top: 20px;
+}
+.skip-but {
+    width: 145px;
+    margin-top: 20px;
+    float: left;
+}
+.skip-but:hover {
+    cursor: pointer;
+}
+.next-but {
+    width: 145px;
+    margin-top: 20px;
+    float: right;
+}
+.next-but:hover {
+    cursor: pointer;
+}
+.finish-but {
+    width: 145px;
+    margin-top: 20px;
+    float: right;
+}
+.finish-but:hover {
+    cursor: pointer;
+}
+td {    
+    padding: 10px;
+    border-collapse: collapse;
+    border: 1px solid silver;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.state-right {
+    background-color: lightgreen;
+    width: 60px;
+}
+.state-right img {
+    width: 60px;
+}
+.state-wrong {
+    background-color: lightcoral;
+    width: 60px;
+}
+.state-wrong img {
+    width: 60px;
+}
+.state-empty {
+    background-color: lightyellow;
+    width: 60px;
+}
+.state-empty img {
+    width: 60px;
+}
+.try-again {
+    height: 50px;
+    width: 300px;
+    margin: 30px;
+}
+.try-again:hover {
+    cursor: pointer;
+}
+.try-again-but {
+    display: block;
+    position: relative;
+    margin: auto;
+}
+
+.result-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.table-div {
+    width: 600px;
+    margin: auto;
+
+}
+.res-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.res-word {
+    font-size: 30px;
+    font-weight: bold;
+}
+.res-translt{
+
+}
+@media (max-width: 700px) {
+    .table-div {
+        width: 100%;
+    }
+    .banner-wrong {width: 100%;}
+    .banner-right {width: 100%;}
+    .banner-empty {width: 100%;}
+    .start-but {width: 100%;}
 }
