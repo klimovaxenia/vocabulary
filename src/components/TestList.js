@@ -33,8 +33,7 @@ function TestList({ words, onRecord, onFinish }) {
 
     // calling callBack function onFinish to change to reSultPage
     // FINISH
-    const handleFinishClick = (event) => {
-        event.preventDefault();
+    const handleFinishClick = () => {
         
         // if we try to check and finish
         if (arg === false) { 

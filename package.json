@@ -1,7 +1,7 @@
 {
   "name": "vacabulary",
   "version": "0.1.0",
-  "homepage": "https://klimovaxenia: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@github.com/klimovaxenia/vocabulary.git",
+  "homepage": "https://klimovaxenia.com/vocabulary",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

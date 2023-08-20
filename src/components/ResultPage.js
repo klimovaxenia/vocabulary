@@ -1,16 +1,20 @@
-import '../index.css'
+
 import rightImg from '../img/right.png'
 import wrongImg from '../img/wrong.png'
 import emptyImg from '../img/empty.png'
 
-function ResultPage({ resultWords, onTryAgain }) {
-    const handleClick = () => {
+function ResultPage({ onReturn, resultWords, onTryAgain }) {
+    const handleTryAgClick = () => {
         onTryAgain();
+    };
+    const handleReturnClick = () => {
+        onReturn();
     };
     let right = 0;
     let stateStyle = '';
     let img = '';
 
+    // Converting resultWords into table of results
     const table = resultWords.map((word, index) => {
         if (word.ansState === 'right') {
             right = right + 1;
@@ -31,7 +35,7 @@ function ResultPage({ resultWords, onTryAgain }) {
                 </td>
             </tr>
     });
-    console.log(resultWords);
+    
     return (
         <div className='result-div'>
             <div></div>
@@ -43,7 +47,8 @@ function ResultPage({ resultWords, onTryAgain }) {
                     
                 </table>
             </div>
-            <div className='try-again-but'><button className='try-again' onClick={handleClick}>Try Again</button></div>
+            <div className='try-again-but'><button className='try-again' onClick={handleTryAgClick}>Try Again</button></div>
+            <div className='try-again-but'><button className='try-again' onClick={handleReturnClick}>Return</button></div>
             
         </div>
         

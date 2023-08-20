@@ -1,67 +1,27 @@
 import { useState } from "react";
-import StartPage from "./components/StartPage";
-import ResultPage from "./components/ResultPage";
-import TestList from "./components/TestList";
+import TestApp from "./components/TestApp";
+import DictList from "./components/DictList";
 
-let count = 0;
-let resultWords = [];
+
 
 function App() {
-    const [testCond, setTestCond] = useState("start");
-    let words = [
-        { word: 'livre', translt: 'book' },
-        { word: 'maison', translt: 'house' },
-        { word: 'chien', translt: 'dog' },
-        { word: 'garçon', translt: 'boy' },
-        { word: 'lundi', translt: 'monday' },
-        { word: 'dimanche', translt: 'sunday' },
-        { word: 'voisin', translt: 'neighbor' }
-    ];
-    
-    let instObj;
-    
+    const [testState, setTestState] = useState("list");
+    const [words, setWords] = useState([]);
 
-    const handleStart = () => {
-        setTestCond('test');
-        
+    const handleChoose = (arr) => {
+        setTestState('test');
+        setWords(arr);
     };
-
-    const handleFinish = () => {
-        setTestCond('result');
-        
-    };
-
-    const handleTryAgain = () => {
-        setTestCond('start');
-        count = 0;
-        resultWords = [];
-    };
-    const recordWords = (flCount, ansState) => {
-        if (count < words.length-1 || count === words.length-1) {
-            instObj = words[count];
-            instObj.flCount = flCount;
-            instObj.ansState = ansState;
-            resultWords.push(instObj);
-            console.log('App count', count);
-            console.log('recording flCount:', flCount, 'ansState:', ansState);
-            console.log('recordWords', resultWords[count]);
-            console.log('recordWords', resultWords);
-
-            count = count + 1;
-
-        }
-        
-
+    const handleReturn = () => {
+        setTestState('list');
     };
 
     let page;
-    if (testCond === 'start') {
-        page = <StartPage onStart={handleStart} />
-    } else if (testCond === 'test') {
-        page = <TestList words={words} onRecord={recordWords} onFinish={handleFinish} />
-    } else if (testCond === 'result') {
-        page = <ResultPage resultWords={resultWords} onTryAgain={handleTryAgain} />
-    }
+    if (testState === 'list') {
+        page = <DictList onChoose={handleChoose} />
+    } else if (testState === 'test') {
+        page = <TestApp words={words} onReturn={handleReturn} />
+    } 
     return (
         <div className="main-div">{page}</div>
         
